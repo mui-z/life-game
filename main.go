@@ -76,13 +76,17 @@ func countAroundAliveCells(currentCells [][]string, x int, y int) int {
 
 	if x == 0 {
 		leftOffset = 0
-	} else if currentCells[y][x-leftOffset] == aliveCellString {
-		left = 1
 	}
 
 	if x == len(currentCells[0])-1 {
 		rightOffset = 0
-	} else if currentCells[y][x+rightOffset] == aliveCellString {
+	}
+
+	if leftOffset != 0 && currentCells[y][x-leftOffset] == aliveCellString {
+		left = 1
+	}
+
+	if rightOffset != 0 && currentCells[y][x+rightOffset] == aliveCellString {
 		right = 1
 	}
 
