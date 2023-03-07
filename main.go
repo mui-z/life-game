@@ -63,9 +63,9 @@ func calcNextGeneration(currentCells [][]string) [][]string {
 
 func countAroundAliveCells(currentCells [][]string, x int, y int) int {
 	var (
-		upper  int
-		middle int
-		lower  int
+		upper  = 0
+		middle = 0
+		lower  = 0
 
 		left  = 0
 		right = 0
