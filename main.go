@@ -69,18 +69,9 @@ func countAroundAliveCells(currentCells [][]string, x int, y int) int {
 
 		left  = 0
 		right = 0
-
-		leftOffset  = 1
-		rightOffset = 1
 	)
 
-	if x == 0 {
-		leftOffset = 0
-	}
-
-	if x == len(currentCells[0])-1 {
-		rightOffset = 0
-	}
+	var leftOffset, rightOffset = calcHorizontalOffset(currentCells, x)
 
 	if leftOffset != 0 && currentCells[y][x-leftOffset] == aliveCellString {
 		left = 1
@@ -101,6 +92,22 @@ func countAroundAliveCells(currentCells [][]string, x int, y int) int {
 	middle = left + right
 
 	return upper + middle + lower
+}
+
+func calcHorizontalOffset(currentCells [][]string, x int) (int, int) {
+	var (
+		leftOffset  = 1
+		rightOffset = 1
+	)
+	if x == 0 {
+		leftOffset = 0
+	}
+
+	if x == len(currentCells[0])-1 {
+		rightOffset = 0
+	}
+
+	return leftOffset, rightOffset
 }
 
 func generateAllDieCells() [][]string {
