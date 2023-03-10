@@ -1,2 +1,2 @@
-# life-game-golang
+# life-game
 life game made with golang
