@@ -130,6 +130,7 @@ func generateAllDieCells() [][]string {
 func draw(cells [][]string) {
 	column := len(cells)
 	row := len(cells[0])
+
 	for i := 0; i < column; i++ {
 		for j := 0; j < row; j++ {
 			fmt.Printf(" " + cells[i][j])
