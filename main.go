@@ -99,6 +99,7 @@ func calcHorizontalOffset(currentCells [][]string, x int) (int, int) {
 		leftOffset  = 1
 		rightOffset = 1
 	)
+
 	if x == 0 {
 		leftOffset = 0
 	}
