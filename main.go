@@ -113,6 +113,7 @@ func calcHorizontalOffset(currentCells [][]string, x int) (int, int) {
 
 func generateAllDieCells() [][]string {
 	cells := make([][]string, columnLength, columnLength)
+
 	for i := 0; i < columnLength; i++ {
 		cells[i] = make([]string, rowLength, rowLength)
 	}
